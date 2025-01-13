@@ -27,6 +27,8 @@ ueberzug_offset = [0, 0, 0, 0]
 
 [opener]
 edit = [
+  { run = 'code "$@"', orphan = true, desc = "code", for = "macos" },
+  { run = 'code -w "$@"', block = true, desc = "code (block)", for = "macos" },
   { run = '$EDITOR "$@"', block = true, desc = "$EDITOR", for = "unix" },
   { run = 'nvim "$@"', desc = "Neovim (Linux)", block = true, for = "unix" },
   # { run = '${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
@@ -67,6 +69,7 @@ extract = [
 ]
 
 play = [
+  { run = '/Applications/VLC.app/Contents/MacOS/VLC "$@"', orphan = true, desc = "vlc", for = "macos" },
   { run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
   { run = 'vlc "$@"', orphan = true, desc = "vlc", for = "unix" },
   { run = 'mpv --force-window %*', orphan = true, for = "windows" },
